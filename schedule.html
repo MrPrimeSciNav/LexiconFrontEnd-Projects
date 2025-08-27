@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule - PrimeSciNavigator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .schedule {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule th,
+        .schedule td {
+            border: 1px solid #090909ed;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .schedule th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <!--1. Visa en bild som länkar till en valfri plats-->
+    <a href="https://picsum.photos/200/300?grayscale">
+        <img src="https://picsum.photos/200/300?random=2" alt="Image of a place" width="400" height="600">
+    </a>
+
+    <figure>
+        <img src="https://picsum.photos/536/354" alt="Winter mountain against the sky">
+        <figcaption>"Mountains are invented for moving" - Homer Simpson</figcaption>
+    </figure>
+
+    <!--2. Visa en titel för hela sidan-->
+    <h1 class="mt-5">Weekly Schedule - PrimeSciNavigator</h1>
+    <table class="schedule" border="1">
+        <thead>
+            <tr>
+                <th></th>
+                <th>9am</th>
+                <th>10am</th>
+                <th>11am</th>
+                <th>12pm</th>
+            </tr>
+            <tr>
+                <th>Monday</th>
+                <td colspan="2">Geography</td>
+                <td>Math</td>
+                <td>Art</td>
+            </tr>
+            <tr>
+                <th scope="row">Tuesday</th>
+                <td>History</td>
+                <td>Biology</td>
+                <td>Math</td>
+                <td>Physical Education</td>
+            </tr>
+        </thead>
+    </table>
+</body>
