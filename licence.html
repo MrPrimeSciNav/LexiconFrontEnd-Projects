@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Prime Licence Plans - PrimeSciNavigator{% endblock %}
+
+{% block content %}
+<h1 class="mt-5">Shoose Your PrimeSciNavigator Licence Plan</h1>
+
+<!-- Form to sign up a user licence -->
+<h2>Licence Plans</h2>
+<form id="licenceForm" method="POST">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+    <!-- Email Input -->
+    <h3>Mad Scientist</h3>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+
+    <!-- Dropdown-list for 4 licnce plans ("Mad Scientist", "Fearless Engineer", "Wreckless Entrepeneur", "Unhuman Athlete")-->
+    <h3>Licence Plan</h3>
+    <div class="mb-3">
+        <label for="licencePlan" class="form-label">Choose a licence plan</label>
+        <select class="form-select" id="licencePlan" name="licencePlan" required>
+            <option value="Mad Scientist">Mad Scientist - $299.99/month</option>
+            <option value="Fearless Engineer">Fearless Engineer - $99.99/month</option>
+            <option value="Wreckless Entrepeneur">Wreckless Entrepeneur - $49.99/month</option>
+            <option value="Unhuman Athlete">Unhuman Athlete - $29.99/month</option>
+        </select>
+    </div>
+
+    <!-- Setup of a payment API to Stripe for digital payments-->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // Initialize Stripe with your publishable key
+        const stripe = Stripe('your-publishable-key-here');
+
+        // Handle form submission for licence plans
+        document.getElementById('licenceForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const { error } = await stripe.redirectToCheckout({
+                lineItems: [{ price: 'price_1Hh1XYZabc123', quantity: 1 }], // Replace with your price ID
+                mode: 'subscription',
+                successUrl: window.location.origin + '/success',
+                cancelUrl: window.location.origin + '/cancel',
+            });
+
+            if (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
+    <form action="/create-checkout-session" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" id="stripe-checkout-session-id" name="stripe-checkout-session-id" />
+        <button class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+
+
+
+
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
