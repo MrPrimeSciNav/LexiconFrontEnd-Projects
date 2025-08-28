@@ -27,3 +27,17 @@
 .hamburger-menue:hover .bottom{
     transform: rotate(-45deg);    
 } 
+
+.reference{
+    position: relative;
+    background: color(srgb red green rgb(233, 103, 192));
+    width: 100;
+    height: 80;
+}
+
+.popout-menu{
+    position: absolute;
+    background: color(srgb red green rgb(226, 141, 199));
+    width: 100;
+    height: 80;
+}
