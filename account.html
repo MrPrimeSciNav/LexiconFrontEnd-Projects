@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        
+    </head>
+
+    <body>
+        <h1>Create Free Account</h1>
+        <form action="/" method="post">
+            <fieldset>
+                <legend><h3>Account Details</h3></legend>
+                <div class="account-details">
+                    <div>
+                        <label>Email*<br><input type="text" name="email" id="email" required></label>
+                    </div>
+                    <div>
+                        <label>Password*<br><input type="text" name="password" id="password" required></label>
+                    </div>
+                    <div>
+                        <label>Repeat Email*<br><input type="text" name="repeat-email" id="repeat-email" required></label>
+                    </div>
+                    <div>
+                        <label>Repeat Password*<br><input type="text" name="repeat-password" id="repeat-password" required></label>
+                    </div>
+
+
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend><h3>Personal Details</h3></legend>
+                <div class="account-details">
+                    <div>
+                        <label>Name*<br><input type="text" name="name" id="name" required></label>
+                    </div>
+                    <div>
+                        <label>Phone*<br><input type="text" name="phone" id="phone" required></label>
+                    </div>
+                    <div>
+                        <label>Street*<br><input type="text" name="street" id="street" required></label>
+                    </div>
+                    <div>
+                        <label>City*<br><input type="text" name="city" id="city" required></label>
+                    </div>
+                    <div>
+                        <label>Country</label>
+                        <select name="country" id="country" required>
+                            <option value="notchosen">Chose country</option>
+                            <option value="UK">UK</option>
+                            <option value="USA">USA</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>Website <br><input type="text" name="website" id="website"></label>
+                    </div>
+                    <div>
+                        <label>Gender*</label>
+                        <div class="gender"></div>
+                        <input type="radio" value="none" id="none" name="name" required checked>
+                        <label for="none">Will not say</label>
+
+                        <input type="radio" value="none" id="male" name="gender" required>
+                        <label for="none">Will not say</label>
+
+                        <input type="radio" value="none" id="female" name="gender" required>
+                        <label for="none">Will not say</label>
+                    </div>
+
+                    <div>
+                        <label>Children</label>
+                        <input type="checkbox" name="children">
+                    </div>
+
+
+                </div>
+            </fieldset>
+            <legend><h3>Terms and Mailing</h3></legend>
+            <div class="terms-mailing">
+                <input type="checkbox" name="checkbox" id="checkbox" required>
+            </div>
+            <br>
+            <input type="checkbox" name="checkbox" id="checkbox">
+            <span>I want to receive news</span>
+            <button type="submit" href="/"></button>
+        </form>
+    </body>
+
+</html>

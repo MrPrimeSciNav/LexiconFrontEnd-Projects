@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=width-device, initial-scale=1.0">
+        <title>IFrame, Audio och Video</title>
+    </head>
+
+    <body>
+        <!--Bädda in Google Maps-->
+        <iframe src="https://www.google.com/maps/place/Prime+Fitness+Studio+i+Edsbyn+AB/@61.3752477,15.8157063,16z/data=!3m1!4b1!4m6!3m5!1s0x46665869c429586d:0xffd3d12d0242bcfd!8m2!3d61.3752477!4d15.8182812!16s%2Fg%2F1hc37v310?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D"
+            width="300" height="200"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <hr>
+        <!--Video-->
+        <video src="Video.mp4"
+            poster="images/Video.png"
+            width="400" height="200"
+            preload
+            controls
+            loop>
+        </video>
+
+        <!--Video med flera källor-->
+        <video width="400" height="200" controls>
+            <source src="images/Video.ogv">
+            <source src="images/Video2.mp4" type="video/mp4">
+            <p>This browser doesn't support our video format</p>
+        </video>
+
+        <!--Audio-->
+        <audio src="sudio/audio.wav" controls autoplay preload>
+
+        </audio>
+    </body>
+</html>
