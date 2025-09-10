@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Site</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        table {
+            width: 600px;
+        }
+
+        th {
+            border-top: 1px solid black;
+            border-bottom: 2px solid rgb(165, 87, 87);
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgb(202, 167, 167);
+        }
+
+        tr:hover {
+            background-color: rgb(182, 106, 153);
+        }
+
+        .title {
+            float: left;
+            width: 100px;
+            display: contents;
+        }
+
+        .submit {
+            text-align: right;
+            border-bottom: none;
+        }
+
+        #register {
+            border-radius: 10px;
+        }
+
+        .field {
+            float: right;
+            text-align: left;
+            width: 200px;
+            padding-right: 20px;
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/submit" method="post">
+        <div>
+            <label for="name" class="title"></label> Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+        </div>
+
+        <div>
+            <label for="email" class="title">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+        </div>
+
+        <div class="radio-buttons">
+            <span class="title">Gender:</span>
+
+            <input type="radio" name="gender" id="male" value="M">
+            <label for="male">M</label>
+
+            <input type="radio" name="gender" id="female" value="F">
+            <label for="female">F</label>
+
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>

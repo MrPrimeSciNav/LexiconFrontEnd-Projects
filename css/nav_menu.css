@@ -1,0 +1,129 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
+* {
+    font-family: Raleway, Arial, elvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.top_nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: blue;
+    color: white;
+    height: 50px;
+    padding: 1em;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list--style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu>li {
+    display: flex;
+    justify-content: center;
+    margin: 0 1em;
+    padding: 0.5em 0;
+    color: white;
+    background-color: orange;
+    cursor: pointer;
+}
+
+.menu-button-container {
+    display: none;
+    height: 100px;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button {
+    background: rgba(254, 175, 129, 0);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button {
+    margin: 0px;
+    transform: rotate(405deg);
+}
+
+
+@media (max-width:700) {
+    .menu-buttoncontainer {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #menu-toggle~.menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms;
+        cubic-bezier: (0.075, 0.82, 0.165, 1);
+    }
+
+    .menu>li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        color: white;
+        background-color: rgba(209, 105, 8, 0.849);
+        width: 100%;
+    }
+
+    .menu>li:nt(:last-child) {
+        border-bottom: 1px solid rgb(222, 171, 99, 0.72);
+    }
+
+    .menu-button::before {
+        content: "";
+        height: 2.5px;
+        width: 100%;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    .menu-button::after {
+        content: "";
+        height: 2.5px;
+        width: 100%;
+        background-color: white;
+        border-radius: 5px;
+        margin-top: -8px;
+    }
+
+    #menu-toggle:checked+.menu li {
+        height: 2.5px;
+        margin: 0.5em 0;
+        padding: 0.5em 0;
+        border: 1px solid black;
+        transition: height 400ms;
+    }
+}
