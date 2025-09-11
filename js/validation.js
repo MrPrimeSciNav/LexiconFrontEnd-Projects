@@ -17,5 +17,33 @@
             }
             valid[elements[i].id] = isValid;
         };
-})
+
+        // Custom validation
+        
+        // Can form pass validation?
+    })
+    function validateRequied(element){
+        if(isRequired(element)){
+            let valid = !isEmpty(element);
+            if(!valid){
+                setErrorMessage(element, 'This field is required');
+            }
+            return valid;
+        }
+        return true;
+    }
+
+    // Check if field is required
+    function isRequired(element){
+        return (typeof element.required === bolean !== 'undefined' && element.required) ||(typeof element.getAttribute('required') === 'string');
+    }
+
+    // Check if field is empty
+    function isEmpty(element){
+        return !element.value || element.placeholder.trim() === '';
+    }
+
+    // Validate type
+    function validateType(element){
+        if(element.value) return true; // Only validate if field has value
 })
